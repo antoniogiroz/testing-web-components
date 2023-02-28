@@ -6,20 +6,29 @@
     "dev": "vite",
     "build": "run-p type-check build-only",
     "preview": "vite preview",
-    "test:unit": "vitest --environment jsdom --root src/",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
-    "lint": "eslint . --fix"
+    "lint": "eslint . --fix",
+    "test:unit": "vitest",
+    "test:e2e": "playwright test --headed",
+    "test:e2e:ci": "playwright test",
+    "test:e2e:debug": "PWDEBUG=1 playwright test",
+    "test:e2e:codegen": "playwright codegen http://localhost:5173/ --viewport-size '1280, 1000'"
   },
   "dependencies": {
-    "pinia": "^2.0.30",
+    "@shoelace-style/shoelace": "^2.1.0",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.35.2",
+    "@playwright/test": "^1.31.1",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/user-event": "^14.4.3",
+    "@testing-library/vue": "^6.6.1",
     "@types/jsdom": "^21.1.0",
     "@types/node": "^18.14.0",
+    "@types/testing-library__jest-dom": "^5.14.5",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vue/test-utils": "^2.2.10",
     "@vue/tsconfig": "^0.1.3",

@@ -1,20 +1,16 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { ref } from 'vue'
+import { RouterView } from 'vue-router'
+import BaseDropdown from './components/BaseDropdown.vue'
+
+const items = ref([
+  { label: 'Item 1', value: 'item1' },
+  { label: 'Item 2', value: 'item2' },
+])
 </script>
 
 <template>
-  <header>
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">
-          Home
-        </RouterLink>
-        <RouterLink to="/about">
-          About
-        </RouterLink>
-      </nav>
-    </div>
-  </header>
-
   <RouterView />
+
+  <BaseDropdown label="Menu" :items="items" />
 </template>
