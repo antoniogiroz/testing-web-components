@@ -1,12 +1,10 @@
 # testing-web-components
 
-This project demonstrates the problems encountered when testing web components with vue-test-utils and the testing library. And how it works with e2e tests with Playwright.
+This project showcases the issues faced while testing web components using `vue-test-utils` and the `vue-testing-library`, and how it works by using e2e tests with Playwright.
 
-Only one unit test tests the BaseDropdown component, which is a wrapper for a web component of the Shoelace library.
+The `BaseDropdown` component, which acts as a wrapper for a web component from the Shoelace library, is only tested by one unit test. The test tries to access the menu items through their attribute role, but it fails as the shadow DOM content is not rendered.
 
-It tries to access the menu items through their attribute role, but it is not found because the shadow DOM content is not rendered.
-
-Unlike the unit tests, the e2e tests performed with Playwright work correctly, allowing access to the dropdown button and the menu through the `getByRole` function.
+However, the e2e tests conducted with Playwright work efficiently, enabling easy access to the dropdown button and the menu through the `getByRole` function.
 
 
 ## Project Setup

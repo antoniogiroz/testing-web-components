@@ -3,7 +3,7 @@ import '@shoelace-style/shoelace/dist/components/dropdown/dropdown'
 import '@shoelace-style/shoelace/dist/components/button/button'
 import '@shoelace-style/shoelace/dist/components/menu/menu'
 import '@shoelace-style/shoelace/dist/components/menu-item/menu-item'
-import type { MenuSelectEventDetail } from '@shoelace-style/shoelace/dist/components/menu/menu'
+import type { MenuSelectEventDetail } from '@shoelace-style/shoelace/dist/components/menu/menu.component.js'
 
 export interface DropdownItem {
   value: string
@@ -16,7 +16,7 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits<{
-  (event: 'select', item: string): void
+  'select': [value: string]
 }>()
 
 function selectItem(event: CustomEvent<MenuSelectEventDetail>) {
